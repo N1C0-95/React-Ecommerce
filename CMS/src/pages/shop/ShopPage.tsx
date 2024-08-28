@@ -5,6 +5,7 @@ import { ProductCard } from "./components/ProductCard";
 import { ServerError, Spinner } from "../../shared";
 import { useCart, useCartPanel } from "../../services/cart";
 import { useProductsService } from "../../services/products";
+import { Card } from "./components/Card";
 
 
 export function ShopPage() {
@@ -57,7 +58,7 @@ export function ShopPage() {
         {state.products.map((p) => {
           return (
             <li key={p.id}>
-            <ProductCard  
+            <Card  
               product={p}
               onAddToCart={() => {
                 openCartPanel();
