@@ -1,7 +1,8 @@
 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { CartPage, CheckoutPage, CmsOrdersPage, CmsPage, CmsProductsPage, LoginPage, ShopPage, ThanksPage } from "./pages";
-import { NavBar, PrivateRoute } from "./shared";
+import { NavBar, PrivateRoute,} from "./shared";
+import { Footer } from "./shared/components/core/Footer";
 
 
 function App() {
@@ -29,8 +30,10 @@ function App() {
           <Route path="*" element={<Navigate to="shop" />} />
         </Routes>
       </div>
+      
 
     </BrowserRouter>
+    
   );
 }
 

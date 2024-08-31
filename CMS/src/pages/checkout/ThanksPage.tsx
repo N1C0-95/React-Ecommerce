@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import thankSvg from "../../assets/thanks-page.svg";
+import thanksSvg from "../../assets/thanks-page.svg";
 
 export function ThanksPage() {
   return (
@@ -10,7 +10,7 @@ export function ThanksPage() {
           <div className="h-40 bg-rose-500 pt-10 sm:h-56">
             <img
               className="h-full w-full object-contain"
-              src={thankSvg}
+              src={thanksSvg}
               alt=""
             />
           </div>

@@ -13,7 +13,7 @@ li{
 
 .title{
   @apply font-extrabold my-2 text-center text-[2rem] text-slate-300
-    2xl:text-[6rem] 2xl:fixed 2xl:bottom-20 2xl:z-0 2xl:rotate-[270deg] 
+    2xl:text-[6rem] 2xl:fixed 2xl:bottom-64 2xl:z-0 2xl:rotate-[270deg] 
     2xl:w-96 2xl:-left-12 2xl:opacity-50 2xl:pointer-events-none
 }
 

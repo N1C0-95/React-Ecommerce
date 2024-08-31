@@ -5,6 +5,7 @@ import {
   selectTotalCartCost,
   useCart,
 } from "../../services/cart";
+import emptyCartSvg from "../../assets/empty_cart.svg";
 
 export function CartPage() {
   const list = useCart(selectCartList);
@@ -13,12 +14,20 @@ export function CartPage() {
   const decreseQty = useCart((state) => state.decreseQuantity);
   const isCartEmpty = useCart(selectCartIsEmpty)
   
+  
 
   return (
     <>
       <h1 className="title">Cart</h1>
       {isCartEmpty ? (
-        <div>no Items</div>
+        <div className="flex justify-center items-center flex-col space-y-10 mt-10">
+          <div className="font-bold text-3xl">It's a bit empty here</div>    
+          <img
+              className="h-52 w-full object-contain"
+              src={emptyCartSvg}
+              alt=""
+            />      
+        </div>
       ) : (
         <div>
           <div>

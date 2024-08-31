@@ -9,6 +9,7 @@ import {
 } from "../../../services/cart";
 import { selectAuthIsLogged, useAuth } from "../../../services/auth";
 import { IfLogged } from "../auth/IfLogged";
+import { Footer } from "./Footer";
 
 export function NavBar() {
   const isPannelOpen = useCartPanel((state) => state.open);
@@ -88,7 +89,7 @@ export function NavBar() {
         {isPannelOpen && <CartPanel />}
 
         {/* Footer */}
-        <div className="fixed bottom-2 right-2 p-5">
+        {/* <div className="fixed bottom-2 right-2 p-5">
           <NavLink to="cms" className="btn accent">
             cms
           </NavLink>
@@ -103,7 +104,9 @@ export function NavBar() {
               Logout
             </button>
           </IfLogged>
-        </div>
+        </div> */}
+        
+        <Footer/>
       </div>
     </div>
   );
