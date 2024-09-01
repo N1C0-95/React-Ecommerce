@@ -29,6 +29,8 @@ export function useCheckout() {
   const clearCart = useCart((state) => state.clearCart);
   const { actions, state } = useOrdersService();
 
+  const basePath = "https://customconnector-demo-h3cxhdfufkb2bugx.eastus-01.azurewebsites.net"
+
   async function sendOrder(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const orderInfo: OrderForm = {
@@ -61,7 +63,7 @@ export function useCheckout() {
       body: data,
     };
 
-    const resp = await fetch("https://demo-customconnector.azurewebsites.net/order", requestOptions);
+    const resp = await fetch(`${basePath}/order`, requestOptions);
     console.log(resp.status)
     if(!(resp instanceof ClientResponseError)){
       clearCart();
