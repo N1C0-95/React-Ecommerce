@@ -29,7 +29,7 @@ export function useCheckout() {
   const clearCart = useCart((state) => state.clearCart);
   const { actions, state } = useOrdersService();
 
-  const basePath = "https://customconnector-demo-h3cxhdfufkb2bugx.eastus-01.azurewebsites.net"
+  const azureAppServiceBasePath = "https://customconnector-demo-h3cxhdfufkb2bugx.eastus-01.azurewebsites.net"
 
   async function sendOrder(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -39,18 +39,6 @@ export function useCheckout() {
       status: "pending",
       total: totalCost,
     };
-
-    /*
-    //add order to pocketbase 
-
-    actions.addOrder(orderInfo)
-      .then((res) => {
-        if (!(res instanceof ClientResponseError)) {
-          clearCart();
-          navigate('/thanks');
-          
-        }
-      })*/
 
     const data: string = JSON.stringify({
       name: orderInfo.user.name,
@@ -63,7 +51,7 @@ export function useCheckout() {
       body: data,
     };
 
-    const resp = await fetch(`${basePath}/order`, requestOptions);
+    const resp = await fetch(`${azureAppServiceBasePath}/order`, requestOptions);
     console.log(resp.status)
     if(!(resp instanceof ClientResponseError)){
       clearCart();
