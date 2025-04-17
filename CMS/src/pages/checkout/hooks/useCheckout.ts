@@ -29,7 +29,7 @@ export function useCheckout() {
   const clearCart = useCart((state) => state.clearCart);
   const { actions, state } = useOrdersService();
 
-  const azureAppServiceBasePath = "https://customconnector-demo-h3cxhdfufkb2bugx.eastus-01.azurewebsites.net"
+  const azureAppServiceBasePath = "https://customconnector-api-demo-gpckg3gngvezetg3.northeurope-01.azurewebsites.net"
 
   async function sendOrder(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
